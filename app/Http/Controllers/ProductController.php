@@ -166,4 +166,25 @@ class ProductController extends Controller
 
         return view('content.index')->with('products',$products);
     }
+
+
+    public function statistik(){
+        $product = product::all();
+        $countprod = count(product::all());
+        $active = count(product::where('is_active','active')->get());
+        $nonactive = count(product::where('is_active','nonactive')->get());
+        $active = count(product::where('is_active','active')->get());
+
+        $allvalue = 0;
+        foreach($product as $price){
+            $allvalue += $price->price;
+        }
+
+        $allitem = 0;
+        foreach($product as $price){
+            $allitem += $price->stock;
+        }
+
+        return view('content.statistik')->with(['countprod'=>$countprod,'active'=>$active,'nonactive'=>$nonactive,'allvalue'=>$allvalue,'allitem'=>$allitem]);
+    }
 }

@@ -27,7 +27,7 @@ class SessionController extends Controller
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect('/products')->with('suksesLogin','anda berhasil login');
         }else{
-            return redirect('/')->withErrors('login yang anda lakukan tidak valid');
+            return redirect('/')->with('gagallogin','login yang anda lakukan tidak valid');
         }
     }
 

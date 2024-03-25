@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>laravel</title>
     <link rel="stylesheet" href="{{ url('css') . '/bootstrap.css' }}">
+    <link rel="stylesheet" href="{{'style.css'}}">
     <link rel="stylesheet" href="{{ url('icon') . '/font/bootstrap-icons.css' }}">
 </head>
 
@@ -42,8 +43,8 @@
     </script>
     <script>
         if (<?= Session::has('suksesupdate') ?>) {
-            suksesupdate()
         }
+            suksesupdate()
 
         function suksesupdate() {
             const Toast = Swal.mixin({

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/products', ProductController::class)->middleware('isLogin');
 Route::post('/products/cari',[ProductController::class,'cari'])->middleware('isLogin');
+Route::get('/statistik',[ProductController::class,'statistik'])->middleware('isLogin');
 
 
 Route::get('/',[SessionController::class,'index'])->middleware('isHasLogin');
