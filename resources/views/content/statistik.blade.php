@@ -59,8 +59,38 @@
                 </div>
 
 
-                <div class="col-6">
+                <div class="col-9 py-2">
+                    <div class="card text-start">
+                        <div class="card-body d-flex ">
 
+                            <div style="background: #BFA3F6" class="card w-25 mx-2 p-2 m-auto rounded-4  ">
+                                <img class="card-img-top rounded-3" src="{{ url('foto') . '/' . $pbanyak->image_url }}" alt="Card image cap" />
+
+                                <p class="text-center">most items : {{$pbanyak->stock}}</p>
+                            </div>
+
+                            <div style="background: #D8F276" class="card w-25 mx-2 p-2 m-auto rounded-4  ">
+                                <img class="card-img-top rounded-3" src="{{ url('foto') . '/' . $psedikit->image_url }}" alt="Card image cap" />
+
+                                <p class="text-center">least items : {{$psedikit->stock}}</p>
+                            </div>
+
+                            <div style="background: #B4655F" class="card w-25 mx-2 p-2 m-auto rounded-4  ">
+                                <img class="card-img-top rounded-3" src="{{ url('foto') . '/' . $pmahal->image_url }}" alt="Card image cap" />
+
+                                <p class="text-center">expensive : {{$pmahal->price}} Rp</p>
+                            </div>
+
+
+                            <div style="background: #D9DDEF" class="card w-25 mx-2 p-2 m-auto rounded-4  ">
+                                <img class="card-img-top rounded-3" src="{{ url('foto') . '/' . $pmurah->image_url }}" alt="Card image cap" />
+
+                                <p class="text-center">cheapest : {{$pmurah->price}} Rp</p>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,26 +1,44 @@
-<div style="height: 100vh; width: 200px;" class=" m-0 border-1 border-black bg-light position-fixed z-3 d-block" >
-    <a class=" h4 mb-3 text-decoration-none " href="/products"><i class="bi h4  text-danger bi-person-bounding-box m-2 "></i>admin
+<div style="height: 100vh; width: 220px; background:#1F1E30"
+    class=" m-0 border-1 border-black position-fixed z-3 d-block">
+    <a class=" h4 mb-3 text-decoration-none text-light" href="/products"><i
+            style="color: #D8F276"
+            class="bi h4 bi-person-bounding-box m-2 "></i>admin
         panel</a>
-    <ul class="list-group icon-link-hover border-0 bg-light my-3  ">
-            <li
-                class="list-group-item d-flex border-0 bg-light justify-content-between align-items-center"
-            >
-            <a href="/products/create" class="nav-link w-100">
-                product+
-                <i class="bi ms-auto  bi-box-seam-fill text-danger "></i>
+    <ul style="background: #1F1E30" class="list-group icon-link-hover border-0 my-2  ">
+        <li style="background: #1F1E30"
+            class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">
+            <a style="background: #1F1E30" href="/products/create" class="nav-link text-light w-100">
+                <i class="bi h5 ms-auto  bi-box-seam-fill text-light me-3"></i>
+                <span class="h6">product+</span>
             </a>
-            </li>
+        </li>
 
 
-            <li
-                class="list-group-item d-flex border-0 bg-light justify-content-between align-items-center"
-            >
-            <a href="/statistik" class="nav-link w-100">
-                stats
-                <i class="bi ms-auto  bi-bar-chart-fill text-danger "></i>
+        <li style="background: #1F1E30"
+            class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">
+            <a style="background: #1F1E30" href="/statistik" class="nav-link text-light w-100">
+                <i class="bi h5 ms-auto  bi-bar-chart-fill text-light me-3"></i>
+                <span class="h6">stats</span>
             </a>
-            </li>
+        </li>
 
-        </ul>
+        <li style="background: #1F1E30"
+            class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">
+            <a style="background: #1F1E30" href="/products" class="nav-link text-light w-100">
+                <i class="bi h5 ms-auto  bi-backpack4-fill text-light me-3"></i>
+                <span class="h6">products</span>
+            </a>
+        </li>
+
+{{--
+        <li style="background: #1F1E30"
+        class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">
+        <a style="background: #1F1E30" href="/statistik" class="nav-link text-light w-100">
+            <i class="bi h5 ms-auto  bi-envelope-fill text-light me-3"></i>
+            <span class="h6">mail</span>
+        </a>
+    </li> --}}
+
+    </ul>
 
 </div>

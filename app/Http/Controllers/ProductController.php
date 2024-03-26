@@ -185,6 +185,19 @@ class ProductController extends Controller
             $allitem += $price->stock;
         }
 
-        return view('content.statistik')->with(['countprod'=>$countprod,'active'=>$active,'nonactive'=>$nonactive,'allvalue'=>$allvalue,'allitem'=>$allitem]);
+
+        $barangpalingbanyak = product::orderBy('stock','desc')->first();
+        $barangpalingsedikit = product::orderBy('stock','asc')->first();
+
+        $barangpalingmahal = product::orderBy('price','desc')->first();
+        $barangpalingmurah = product::orderBy('price','asc')->first();
+
+
+        return view('content.statistik')->with(['countprod'=>$countprod,'active'=>$active,'nonactive'=>$nonactive,'allvalue'=>$allvalue,'allitem'=>$allitem,
+        'pbanyak' => $barangpalingbanyak,
+        'psedikit' => $barangpalingsedikit,
+        'pmahal' => $barangpalingmahal,
+        'pmurah' => $barangpalingmurah,
+    ]);
     }
 }
