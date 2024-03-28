@@ -151,11 +151,8 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        $data = product::find($id);
-        File::delete(public_path('foto').'/'.$data->image_url);
-
         product::find($id)->delete();
-        return redirect('/products')->with('sukseshapus','berhasil menghapus'.$data->product_name);
+        return redirect('/products')->with('sukseshapus','berhasil menghapus');
     }
 
 
@@ -200,4 +197,25 @@ class ProductController extends Controller
         'pmurah' => $barangpalingmurah,
     ]);
     }
+
+    public function sampah(){
+        $products = product::onlyTrashed()->get();
+        return view('content.sampah')->with('products',$products);
+    }
+
+    public function force($id){
+        product::onlyTrashed()->where('id',$id)->restore();
+        $data = product::find($id);
+        File::delete(public_path('foto').'/'.$data->image_url);
+        $data->delete();
+        product::onlyTrashed()->where('id',$id)->forceDelete();
+
+        return redirect('/sampah');
+    }
+
+    public function restore($id){
+        product::onlyTrashed()->where('id',$id)->restore();
+        return redirect('/sampah');
+    }
+
 }

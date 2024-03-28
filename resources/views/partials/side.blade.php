@@ -30,6 +30,14 @@
             </a>
         </li>
 
+
+        <li style="background: #1F1E30"
+        class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">
+        <a style="background: #1F1E30" href="/sampah" class="nav-link text-light w-100">
+            <i class="bi h5 ms-auto  bi-trash2-fill text-light me-3"></i>
+            <span class="h6">trash</span>
+        </a>
+    </li>
 {{--
         <li style="background: #1F1E30"
         class="list-group-item my-2  d-flex border-0 justify-content-between align-items-center">

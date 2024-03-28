@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/products', ProductController::class)->middleware('isLogin');
-Route::post('/products/cari',[ProductController::class,'cari'])->middleware('isLogin');
-Route::get('/statistik',[ProductController::class,'statistik'])->middleware('isLogin');
+Route::resource('/products',ProductController::class)->middleware('isLogin');
+Route::controller(ProductController::class)->group(function(){
+    Route::post('/products/cari','cari')->middleware('isLogin');
+    Route::get('/statistik','statistik')->middleware('isLogin');
+    Route::get('/sampah','sampah')->middleware('isLogin');
+    Route::get('/sampah/force/{id}','force')->middleware('isLogin');
+    Route::get('sampah/restore/{id}','restore')->middleware('isLogin');
+});
+
 
 
 Route::get('/',[SessionController::class,'index'])->middleware('isHasLogin');
